@@ -6,8 +6,41 @@ Java/Spring 환경에서 테스트에 사용할 더미 데이터를 쉽게 생�
 
 
 
-## 프로젝트 개요
-
+## 프로젝트 구조
+```bash
+com.example.dummygen
+├── core/                  # 더미 생성의 핵심 로직
+│   ├── DummyGenerator.java
+│   ├── TypeResolver.java
+│   ├── Constraint.java
+│   ├── ConstraintValidator.java
+│   └── RandomValueGenerator.java
+│
+├── costom/                # 사용자 정의 설정
+│   ├── FieldConstraint.java
+│   └── DummyCostom.java
+│
+├── format/                # 다양한 출력 포맷 지원
+│   ├── CsvExporter.java
+│   ├── JsonExporter.java
+│   ├── SqlExporter.java
+│   ├── ExcelExporter.java
+│   └── ExportFormat.java
+│
+├── model/                 # 내부 객체 모델
+│   ├── DummyObject.java
+│   ├── DummyField.java
+│   └── DataType.java
+│
+├── ai/                    # 자연어 해석 → 생성조건으로 변환
+│   ├── NaturalLanguageParser.java
+│   └── PromptToSchemaConverter.java
+│
+└── utils/                 # 유틸리티
+├── RegexGenerator.java
+├── ReflectionUtils.java
+└── UniqueValueRegistry.java
+```
 
 ##  설치 방법 / 사용 방법
 
